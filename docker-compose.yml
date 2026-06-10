@@ -1,0 +1,10 @@
+﻿services:
+  testwebapp:
+    image: testwebapp
+    build:
+      context: .
+      dockerfile: TestWebApp/Dockerfile
+    ports:
+      - "5000:5166"
+    environment:
+      - ASPNETCORE_HTTP_PORTS=5166
