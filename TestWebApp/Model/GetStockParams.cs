@@ -15,10 +15,10 @@ public class GetStockParams
         var ps = "";
         if (Skip != 0) _filters.Add($"Skip={Skip}");
         if (Take != 0) _filters.Add($"Take={Take}");
-        if (string.IsNullOrWhiteSpace(Expand)) _filters.Add($"Expand={Expand}");
-        if (string.IsNullOrWhiteSpace(Filter)) _filters.Add($"Expand={Filter}");
-        if (string.IsNullOrWhiteSpace(OrderBy)) _filters.Add($"Expand={OrderBy}");
-        if (string.IsNullOrWhiteSpace(OrderDirection)) _filters.Add($"Expand={OrderDirection}");
+        if (!string.IsNullOrWhiteSpace(Expand)) _filters.Add($"Expand={Expand}");
+        if (!string.IsNullOrWhiteSpace(Filter)) _filters.Add($"Filter={Filter}");
+        if (!string.IsNullOrWhiteSpace(OrderBy)) _filters.Add($"OrderBy={OrderBy}");
+        if (!string.IsNullOrWhiteSpace(OrderDirection)) _filters.Add($"OrderDirection={OrderDirection}");
 
         if (_filters.Any())
         {
